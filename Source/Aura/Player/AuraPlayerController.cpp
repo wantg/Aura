@@ -1,4 +1,5 @@
 #include "Player/AuraPlayerController.h"
+
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "Interaction/EnemyInterface.h"
@@ -65,8 +66,9 @@ void AAuraPlayerController::BeginPlay() {
     check(AuraContext);
 
     UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer());
-    check(Subsystem);
-    Subsystem->AddMappingContext(AuraContext, 0);
+    if (Subsystem) {
+        Subsystem->AddMappingContext(AuraContext, 0);
+    }
 
     bShowMouseCursor   = true;
     DefaultMouseCursor = EMouseCursor::Default;
