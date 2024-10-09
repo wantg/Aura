@@ -28,4 +28,6 @@ class AURA_API AAuraCharacterBase : public ACharacter, public IAbilitySystemInte
 
     UPROPERTY()
     TObjectPtr<UAttributeSet> AttributeSet;
+
+    virtual void InitAbilityActorInfo();
 };
