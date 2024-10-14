@@ -61,4 +61,6 @@ class AURA_API AAuraPlayerController : public APlayerController {
 
     UPROPERTY(VisibleAnywhere)
     TObjectPtr<USplineComponent> Spline;
+
+    void AutoRun();
 };
